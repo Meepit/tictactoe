@@ -5,6 +5,7 @@ class Board
   end
 
   def place_piece(piece, position)
+    # Ideally should validate tile
     row, column = get_row_rolumn(position)
     modify_state(piece, position)
   end
