@@ -11,4 +11,8 @@ describe Board do
   it 'should return empty when getting empty tile' do
     expect(subject.get_tile_state(3)).to eq "empty"
   end
+  it 'should return X when getting X marked tile' do
+    subject.place_piece('X', 4)
+    expect(subject.get_tile_state(4)).to eq "X"
+  end
 end
