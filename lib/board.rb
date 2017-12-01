@@ -14,6 +14,12 @@ class Board
     ('012345678'.include? get_tile(position)) ? "empty" : get_tile(position)
   end
 
+  def pretty_print_board
+    # Are we testing this?
+    puts "\n"
+    3.times{|i| print(state[i].join(" "), "\n")}
+  end
+
   private
   def get_row_rolumn(position)
     [position / 3, position % 3]

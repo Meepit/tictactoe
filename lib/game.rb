@@ -1,10 +1,18 @@
 require_relative 'board'
+require_relative 'player'
 
 class Game
-  attr_reader :board
-  def initialize(board = Board.new, player_1 = Player.new, player_2 = Player.new)
+  attr_reader :board, :player_1, :player_2
+  def initialize(board = Board.new, player_1 = Player.new(board), player_2 = Player.new(board))
     @board = board
     @player_1 = player_1
     @player_2 = player_2
+  end
+
+  def decide_first
+   # assuming X goes first
+   rand_num = rand(1..2)
+   rand_num == 1 ? player_1.set_piece("X") : player_2.set_piece("X")
+   "Player #{rand_num} goes first"
   end
 end
