@@ -1,4 +1,7 @@
+require_relative 'board_validator'
+
 class Board
+  include BoardValidator
   attr_reader :state
   def initialize
     @state = [['0', '1', '2'],['3', '4', '5'],['6', '7', '8']]
