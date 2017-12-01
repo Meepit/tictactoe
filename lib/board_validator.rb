@@ -15,7 +15,12 @@ module BoardValidator
     flag
   end
 
-  def vaidate_diagonals(board_state)
-
+  def validate_diagonals(board_state)
+    diagonal_1, diagonal_2 = "", ""
+    3.times do |i|
+      diagonal_1 += board_state[i][i]
+      diagonal_2 += board_state[i][2-i]
+    end
+    diagonal_1 != ('XXX' || 'OOO') && diagonal_2 != ('XXX' || 'OOO')
   end
 end

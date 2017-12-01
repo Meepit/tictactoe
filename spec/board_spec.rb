@@ -30,5 +30,12 @@ describe Board do
       board_state = [['0', 'X', '2'],['3', 'X', '5'],['6', 'X', '8']]
       expect(subject.validate_columns(board_state)).to eq(false)
     end
+    it 'should return true when all diagonals are valid' do
+      expect(subject.validate_diagonals(subject.state)).to eq(true)
+    end
+    it 'should return false when a game is over due to won diagonal' do
+      board_state = [['X', '1', '2'],['3', 'X', '5'],['6', '7', 'X']]
+      expect(subject.validate_diagonals(board_state)).to eq(false)
+    end
   end
 end
