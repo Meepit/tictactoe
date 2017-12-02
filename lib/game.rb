@@ -7,6 +7,7 @@ class Game
     @board = board
     @player_1 = player_1
     @player_2 = player_2
+    @num_moves = 0
   end
 
   def decide_first
@@ -14,5 +15,15 @@ class Game
    rand_num = rand(1..2)
    rand_num == 1 ? player_1.set_piece("X") : player_2.set_piece("X")
    "Player #{rand_num} goes first"
+  end
+
+  def get_player_move(player)
+    # How are we testing this?
+    location = gets.chomp
+    begin
+      board.place_piece(player.piece, location)
+    rescue RuntimeError
+      "Invalid move"
+    end
   end
 end

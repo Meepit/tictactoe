@@ -8,7 +8,6 @@ class Board
   end
 
   def place_piece(piece, position)
-    # Ideally should validate tile
     raise "Invalid move, already a piece there" if get_tile_state(position) != "empty"
     row, column = get_row_rolumn(position)
     modify_state(piece, position)

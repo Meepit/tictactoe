@@ -1,4 +1,10 @@
 module BoardValidator
+
+  def perform_validation(board_state)
+    validate_rows(board_state) && validate_columns(board_state) && validate_diagonals(board_state)
+  end
+
+  private
   def validate_rows(board_state)
     !board_state.map{|row| row.join("") != ('XXX' || 'OOO')}.include? false
   end

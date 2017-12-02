@@ -7,4 +7,8 @@ describe Game do
   it 'should decide a players piece' do
     expect(subject.decide_first).to eq("Player 1 goes first").or(eq("Player 2 goes first"))
   end
+
+  # it 'should not fail when a player makes an invalid move' do
+  #   subject.
+  # end
 end
