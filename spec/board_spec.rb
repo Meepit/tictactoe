@@ -42,5 +42,9 @@ describe Board do
       board_state = [['X', '1', '2'],['3', 'X', '5'],['6', '7', 'X']]
       expect(subject.perform_validation(board_state)).to eq(false)
     end
+    it 'should return false when game is over due to draw' do
+      board_state = [['X', 'O', 'X'],['O', 'X', 'O'],['O', 'X', 'O']]
+      expect(subject.perform_validation(board_state)).to eq(false)
+    end
   end
 end
