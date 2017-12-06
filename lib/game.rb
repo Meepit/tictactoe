@@ -7,7 +7,6 @@ class Game
     @board = board
     @player_1 = player_1
     @player_2 = player_2
-    @num_moves = 0 # When this reaches 9 and board is valid then its a draw.
   end
 
   def decide_first
